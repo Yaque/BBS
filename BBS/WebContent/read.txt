@@ -1,0 +1,40 @@
+CREATE SCHEMA `bbs` ;
+
+CREATE TABLE `bbs`.`board` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `content` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `bbs`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `gender` TINYINT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `power` INT NOT NULL,
+  `profile` VARCHAR(45) NOT NULL,
+  `bid` INT NOT NULL,
+  `reg_date` DATE NOT NULL,
+  `last_login_date` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `bbs`.`board` (`id`, `name`, `content`) VALUES ('1', 'ÄãºÃ', 'À²À²À²À²À²À²');
+
+CREATE TABLE `bbs`.`article` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `uid` INT NOT NULL,
+  `bid` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `content` VARCHAR(45) NOT NULL,
+  `publishtime` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+  
+CREATE TABLE `bbs`.`reply` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `uid` INT NOT NULL,
+  `aid` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `content` VARCHAR(45) NOT NULL,
+  `publishtime` DATE NOT NULL,
+  PRIMARY KEY (`id`));

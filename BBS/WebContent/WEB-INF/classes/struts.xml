@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <!--  <constant name = "struts.custom.i18n.resources" value = "messageResource"/>-->
+  <!--  <constant name = "struts.custom.i18n.resources" value = "messageResource"/>
+  <constant name = "struts.i18n.encoding" value = "utf-8"/>-->
+  <!--  <constant name = "struts.custom.i18n.resources" value = "messageResource"/>
+  <constant name = "struts.i18n.encoding" value = "utf-8"/>-->
+  <package name = "default" extends = "struts-default">
+    <action name="login" class="action.LoginAction">
+    	<result name="success">/index.jsp</result>
+    	<result name="error">/loginerror.jsp</result>
+    </action>
+    <action name="register" class="action.RegisterAction">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="input">/register.jsp</result>
+    	<result name="success">/regsuccess.jsp</result>
+    	<result name="none">/regerror.jsp</result>
+    	<result name="error">/error.jsp</result>
+    </action>
+    <action name="userInfo" class="action.userInfoAction">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/userInfoSuccess.jsp</result>
+    	<result name="error">/error.jsp</result>
+    </action>
+    <action name="logout" class="action.LoginAction" method="logout">
+    	<result name="success">/index.jsp</result>    
+    </action>
+    <action name="addBoard" class="action.BoardAction" method="add">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/adminIndex.jsp?action=addBoardSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action>
+    <action name="listBoard" class="action.BoardAction" method="list">
+    	<result name="success">/adminIndex.jsp?action=modBoard</result>    
+    </action>    
+    <action name="modBoard" class="action.BoardAction" method="mod">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/adminIndex.jsp?action=modBoardSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action>    
+    <action name="boardInfo" class="action.BoardAction" method="info">
+    	<result name="success">/boardInfo.jsp</result>    
+    	<result name="error">/error.jsp</result>
+    </action>   
+    <action name="delBoard" class="action.BoardAction" method="del">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/adminIndex.jsp?action=delBoardSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action>     
+    <action name="listUser" class="action.userInfoAction" method="list">
+    	<result name="success">/adminIndex.jsp?action=listUser</result>    
+    </action> 
+    <action name="delUser" class="action.userInfoAction" method="del">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/adminIndex.jsp?action=delUserSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action>       
+    <action name="main" class="action.MainAction" method="boardList">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=boardList</result>
+    	<result name="error">/error.jsp</result>
+    </action>     
+    <action name="postsList" class="action.MainAction" method="postsList">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=postsList</result>
+    	<result name="error">/error.jsp</result>
+    </action> 
+    <action name="postsInfo" class="action.MainAction" method="postsInfo">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=postsInfo</result>
+    	<result name="error">/error.jsp</result>
+    </action>    
+    <action name="addReply" class="action.MainAction" method="addReply">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=postsInfo</result>
+    	<result name="error">/error.jsp</result>
+    </action>  
+    <action name="addPosts" class="action.MainAction" method="addPosts">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=addPostsSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action>     
+    <action name="delPosts" class="action.MainAction" method="delPosts">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=delPostsSuccess</result>
+    	<result name="error">/error.jsp</result>
+    </action> 
+    <action name="delReply" class="action.MainAction" method="delReply">
+    	<exception-mapping result="error" exception="java.lang.Exception"/>
+    	<result name="success">/main.jsp?action=postsInfo</result>
+    	<result name="error">/error.jsp</result>
+    </action>         
+  </package>
+</struts>

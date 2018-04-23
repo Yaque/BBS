@@ -1,0 +1,13 @@
+A:link{text-decoration:none}
+A:visited{text-decoration:none}
+A:hover {color: #ff00ff;text-decoration:underline}
+.center{  
+     position: absolute;  
+     top: 30%;  
+     left: 50%;  
+     -ms-transform: translate(-50%,-50%);  
+     -moz-transform: translate(-50%,-50%);  
+     -o-transform: translate(-50%,-50%);  
+     transform: translate(-50%,-50%);   
+  
+}  
