@@ -3,7 +3,7 @@ A:visited{text-decoration:none}
 A:hover {color: #ff00ff;text-decoration:underline}
 .center{  
      position: absolute;  
-     top: 30%;  
+     top: 50%;  
      left: 50%;  
      -ms-transform: translate(-50%,-50%);  
      -moz-transform: translate(-50%,-50%);  

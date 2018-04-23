@@ -22,26 +22,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
   </head>
   
   <body>
   <center>
+  <s:fielderror key="name"></s:fielderror>
+  
     <form name="form1" method="post" action="register.action">
       <table width="443" border="1" align="center">
         <tr>
           <td width="85">昵称</td>
-          <td width="342"><label>
-            <input name="user.name" type="text"/>
-          </label></td>
+          <td width="342">
+          <label>
+            <input name="user.name" type="text"/><br>用户名为以字母开头加数字组合
+          </label>
+          </td>
         </tr>
         <tr>
           <td>密码：</td>
           <td><label>
-            <input type="password" name="user.password">
+            <input type="password" name="user.password"><br>密码以字母开头加数字或下划线
           </label></td>
         </tr>
         <tr>
@@ -82,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <tr>
           <td>电子邮件：</td>
           <td><label>
-            <input name="user.email" type="text" id="title" size="45" />
+            <input name="user.email" type="text" id="title" size="45" /><br>邮箱必须格式标准
           </label></td>
         </tr>
         <tr>
